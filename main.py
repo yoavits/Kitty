@@ -76,7 +76,7 @@ def save_ticket_args(username, support_channel, staff_role, channel_name, issue,
 
 
 # Bot Token
-Token = "MTA3NDQ2MDQxNzQ1NzM4OTU3OA.GtM3oO.nNS3AjjOxfozrv-nnrAokQ3mdfM_5Z733p-ykI"
+Token = "Your bot token will be inserted over here"
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -296,28 +296,6 @@ async def on_member_update(before, after):
     if after.id in role_changes:
         # Wait for 10 seconds before sending the embed
         await asyncio.sleep(10)
-
-        changes = role_changes.get(after.id, {"added": set(), "removed": set()})
-        """
-        roles_added_title = ""
-        roles_added_description = ""
-        if roles_added > 1:
-            roles_added_title = "Roles have been Attached!"
-            roles_added_description = f"The following roles have been added to {after.mention}:\n{added_roles_str}\n"
-        else:
-            roles_added_title = "Role has been Attached"
-            roles_added_description = f"The following has been added to {after.mention}:\n{added_roles_str}\n"
-        
-        roles_removed_title = ""
-        roles_removed_description = ""
-        if roles_removed > 1:
-            roles_added_title = "Roles have been Subtracted!"
-            roles_added_description = f"The following roles have been removed from {after.mention}:\n{removed_roles_str}\n"
-
-        else:
-            roles_added_title = "Role has been Subtracted"
-            roles_added_description = f"The following has been removed from {after.mention}:\n{removed_roles_str}\n"
-        """
         #responsible = before.guild.get_member(bot.user.id).display_name
         embed = None
         if changes["added"] and not changes["removed"]:
